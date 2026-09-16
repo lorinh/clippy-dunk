@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dunk Clippy Yoder — Sept 18 at Walnut Creek Cheese</title>
+<meta name="description" content="Clippy Yoder goes in the dunk tank for Toward the Goal Ministries. Friday, Sept 18, 5:30–6:00 PM at Walnut Creek Cheese.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pool:#1d6fd6;
+  --pool-deep:#0e3f80;
+  --water:#4fb3f0;
+  --cheese:#f7c83b;
+  --ink:#10233f;
+  --paper:#ffffff;
+  --muted:#4a5d78;
+  --line:#d5e3f4;
+  --bg:#eef6fd;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e8f1fb; --paper:#0d1d33; --muted:#9fb3cc; --line:#23395a; --bg:#081427;
+    --pool-deep:#0a2c5c;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e8f1fb; --paper:#0d1d33; --muted:#9fb3cc; --line:#23395a; --bg:#081427;
+  --pool-deep:#0a2c5c;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cheese);outline-offset:3px;border-radius:4px}
+
+/* Hero */
+.hero{background:var(--pool);color:#fff;padding:clamp(1.5rem,4vw,3rem) 1.25rem 0;position:relative;overflow:hidden}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:end}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,9vw,6.5rem);line-height:.88;margin:0 0 1rem;letter-spacing:-.01em}
+.hero h1 span{display:block}
+.lede{font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:30ch;margin:0 0 1.5rem}
+.when{display:inline-block;background:var(--cheese);color:#10233f;font-weight:700;padding:.55rem .9rem;border-radius:6px;margin-bottom:2.5rem;font-size:1.05rem}
+.copy{padding-bottom:2rem}
+
+.tank-wrap{display:flex;flex-direction:column;align-items:center}
+.tank{width:100%;max-width:440px;display:block}
+.throw-row{display:flex;align-items:center;gap:1rem;margin:.25rem 0 1.25rem}
+.throw{font-family:var(--display);font-size:1.3rem;background:var(--cheese);color:#10233f;border:0;border-radius:999px;padding:.7rem 1.6rem;cursor:pointer;box-shadow:0 4px 0 #b88f12}
+.throw:active{transform:translateY(3px);box-shadow:0 1px 0 #b88f12}
+.throw[disabled]{opacity:.7;cursor:default}
+.count{font-weight:600;min-width:7ch}
+
+/* Tank animation */
+#person,#seat,#ball,.drop{transition:transform .45s cubic-bezier(.5,0,.8,.4)}
+#seat{transform-origin:118px 176px}
+.dunked #seat{transform:rotate(62deg)}
+.dunked #person{transform:translateY(118px);transition:transform .5s cubic-bezier(.55,0,1,.45) .08s}
+#target{transition:transform .15s}
+.hit #target{transform:translateX(6px)}
+#ball{opacity:0}
+.flying #ball{animation:fly .5s linear forwards}
+@keyframes fly{
+  0%{opacity:1;transform:translate(-330px,120px)}
+  50%{transform:translate(-160px,-40px)}
+  100%{opacity:1;transform:translate(0,0)}
+}
+.drop{opacity:0}
+.dunked .drop{animation:splash .7s ease-out .45s forwards}
+@keyframes splash{
+  0%{opacity:1;transform:translate(0,0)}
+  100%{opacity:0;transform:translate(var(--dx),-70px)}
+}
+#waterline{transition:transform .3s ease .45s}
+.dunked #waterline{transform:translateY(-10px)}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* Wave divider */
+.wave{display:block;width:100%;height:48px;color:var(--bg)}
+
+/* Details */
+main{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.details{display:grid;grid-template-columns:repeat(3,1fr);border-top:4px solid var(--ink)}
+.details > div{padding:1.25rem 1.5rem 1.5rem 0}
+.details > div + div{padding-left:1.5rem;border-left:1px solid var(--line)}
+.details h2{font-family:var(--display);font-weight:400;font-size:1.6rem;margin:0 0 .35rem;line-height:1.1}
+.details p{margin:0;color:var(--muted);max-width:32ch}
+.details strong{color:var(--ink);display:block;font-size:1.2rem}
+.fill{background:var(--cheese);color:#10233f;padding:0 .25em;border-radius:3px;font-weight:700}
+
+.countdown{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:1rem 2rem}
+.countdown h2{font-family:var(--display);font-weight:400;font-size:1.6rem;margin:0}
+.clock{display:flex;gap:1.5rem;font-variant-numeric:tabular-nums}
+.clock div{text-align:left}
+.clock b{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,6vw,3.5rem);line-height:1;display:block;color:var(--pool)}
+.clock small{color:var(--muted);font-size:.95rem}
+.status{font-size:1.2rem;font-weight:600;margin:0}
+
+footer{max-width:1080px;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--muted);border-top:1px solid var(--line);font-size:.95rem}
+
+@media (max-width:760px){
+  .hero-inner{grid-template-columns:1fr;gap:0}
+  .copy{padding-bottom:.5rem}
+  .when{margin-bottom:1rem}
+  .details{grid-template-columns:1fr}
+  .details > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="copy">
+      <h1><span>Dunk</span><span>Clippy</span><span>Yoder</span></h1>
+      <p class="lede">He sits on the seat. You hit the target. Every throw raises money for Toward the Goal Ministries.</p>
+      <div class="when">Friday, Sept 18 · 5:30–6:00 PM</div>
+    </div>
+
+    <div class="tank-wrap">
+      <svg class="tank" id="tank" viewBox="0 0 420 380" role="img" aria-labelledby="tankTitle">
+        <title id="tankTitle">Dunk tank with Clippy on the seat. Press Throw to dunk him.</title>
+        <!-- frame -->
+        <rect x="40" y="70" width="12" height="300" fill="#0e3f80"/>
+        <rect x="40" y="62" width="250" height="14" fill="#0e3f80"/>
+        <!-- target arm -->
+        <rect x="290" y="150" width="70" height="8" fill="#0e3f80"/>
+        <g id="target">
+          <circle cx="370" cy="154" r="28" fill="#fff"/>
+          <circle cx="370" cy="154" r="19" fill="#d8352a"/>
+          <circle cx="370" cy="154" r="10" fill="#fff"/>
+          <circle cx="370" cy="154" r="4" fill="#d8352a"/>
+        </g>
+        <!-- person -->
+        <g id="person">
+          <circle cx="170" cy="92" r="20" fill="#f3c9a4"/>
+          <ellipse cx="163" cy="82" rx="6" ry="3.5" fill="#fff" opacity=".55" transform="rotate(-25 163 82)"/>
+          <rect x="152" y="112" width="36" height="52" rx="10" fill="#f7c83b"/>
+          <rect x="152" y="160" width="40" height="14" rx="6" fill="#10233f"/>
+          <rect x="182" y="166" width="14" height="44" rx="6" fill="#10233f"/>
+          <rect x="164" y="166" width="14" height="44" rx="6" fill="#10233f"/>
+          <rect x="140" y="118" width="12" height="36" rx="6" fill="#f3c9a4"/>
+          <rect x="188" y="118" width="12" height="36" rx="6" fill="#f3c9a4"/>
+        </g>
+        <!-- seat -->
+        <rect id="seat" x="118" y="172" width="120" height="10" rx="3" fill="#8a5a2b"/>
+        <!-- tank glass & water -->
+        <rect x="60" y="200" width="250" height="170" rx="6" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="4"/>
+        <g id="waterline">
+          <path d="M64 250 q30 -10 60 0 t60 0 t60 0 t62 0 V366 H64z" fill="#4fb3f0" opacity=".85"/>
+        </g>
+        <!-- splash -->
+        <circle class="drop" cx="180" cy="245" r="7" fill="#bfe5fb" style="--dx:-50px"/>
+        <circle class="drop" cx="190" cy="245" r="5" fill="#bfe5fb" style="--dx:-20px"/>
+        <circle class="drop" cx="200" cy="245" r="8" fill="#bfe5fb" style="--dx:15px"/>
+        <circle class="drop" cx="210" cy="245" r="5" fill="#bfe5fb" style="--dx:45px"/>
+        <circle class="drop" cx="170" cy="245" r="4" fill="#bfe5fb" style="--dx:-75px"/>
+        <!-- ball -->
+        <circle id="ball" cx="352" cy="154" r="10" fill="#fff" stroke="#10233f" stroke-width="2"/>
+      </svg>
+      <div class="throw-row">
+        <button class="throw" id="throwBtn" type="button">Throw</button>
+        <span class="count" id="count" aria-live="polite">0 dunks</span>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 24 Q100 0 200 24 T400 24 T600 24 T800 24 T1000 24 T1200 24 V48 H0z" fill="currentColor"/>
+  </svg>
+</header>
+
+<main>
+  <section class="details" aria-label="Event details">
+    <div>
+      <h2>When</h2>
+      <p><strong>Friday, Sept 18</strong>5:30 to 6:00 PM. Thirty minutes only, so come on time.</p>
+    </div>
+    <div>
+      <h2>Where</h2>
+      <p><strong>Walnut Creek Cheese</strong>Look for the tank and the line of people with good aim.</p>
+    </div>
+    <div>
+      <h2>Why</h2>
+      <p><strong>Toward the Goal Ministries</strong>All proceeds go to Toward the Goal Ministries.</p>
+    </div>
+  </section>
+
+  <section class="countdown" aria-live="polite">
+    <h2 id="cdLabel">Tank opens in</h2>
+    <div class="clock" id="clock">
+      <div><b id="d">–</b><small>days</small></div>
+      <div><b id="h">–</b><small>hours</small></div>
+      <div><b id="m">–</b><small>minutes</small></div>
+    </div>
+    <p class="status" id="status" hidden></p>
+  </section>
+</main>
+
+<footer>
+  Clippy Yoder has agreed to all of this.
+</footer>
+
+<script>
+(function(){
+  var tank=document.getElementById('tank');
+  var btn=document.getElementById('throwBtn');
+  var countEl=document.getElementById('count');
+  var n=0;
+  btn.addEventListener('click',function(){
+    btn.disabled=true;
+    tank.classList.add('flying');
+    setTimeout(function(){
+      tank.classList.add('hit','dunked');
+      n++;
+      countEl.textContent=n+(n===1?' dunk':' dunks');
+    },480);
+    setTimeout(function(){
+      tank.classList.remove('flying','hit','dunked');
+      btn.disabled=false;
+    },2300);
+  });
+
+  // Countdown: Sept 18, 2026, 5:30 PM Eastern (EDT, UTC-4)
+  var start=new Date('2026-09-18T17:30:00-04:00').getTime();
+  var end=new Date('2026-09-18T18:00:00-04:00').getTime();
+  var clock=document.getElementById('clock');
+  var label=document.getElementById('cdLabel');
+  var status=document.getElementById('status');
+  function tick(){
+    var now=Date.now();
+    if(now<start){
+      var s=Math.floor((start-now)/1000);
+      document.getElementById('d').textContent=Math.floor(s/86400);
+      document.getElementById('h').textContent=Math.floor(s%86400/3600);
+      document.getElementById('m').textContent=Math.floor(s%3600/60);
+      return;
+    }
+    clock.hidden=true;
+    status.hidden=false;
+    if(now<end){label.textContent='The tank is open';status.textContent='Head to Walnut Creek Cheese now. It closes at 6:00 PM.';}
+    else{label.textContent='The tank is closed';status.textContent='Clippy has been dunked. Thanks to everyone who threw.';}
+  }
+  tick();
+  setInterval(tick,30000);
+})();
+</script>
+</body>
+</html>
